@@ -4,9 +4,7 @@ const About = () => {
       <div className='flex flex-col justify-center items-center w-full h-full'>
         <div className='max-w-[1000px] w-full grid grid-cols-2 gap-8'>
           <div className='sm:text-right pb-8 pl-4'>
-            <p className='text-4xl font-bold inline border-b-4 border-pink-600'>
-              About
-            </p>
+            <p className='text-4xl font-bold inline border-b-4 border-pink-600'>About</p>
           </div>
           <div></div>
         </div>
@@ -16,10 +14,9 @@ const About = () => {
           </div>
           <div>
             <p>
-              I am passionate about creating innovative software that is
-              applicable to our everyday lives. I develop projects for both
-              individual clients and businesses in a way tailored to meet their
-              specific needs.
+              I am passionate about creating innovative software that is applicable to our everyday
+              lives. I develop projects for both individual clients and businesses in a way tailored
+              to meet their specific needs.
             </p>
           </div>
         </div>

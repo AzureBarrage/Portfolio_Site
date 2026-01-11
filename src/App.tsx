@@ -1,13 +1,13 @@
-import About from "./components/About";
-import Home from "./components/Home";
-import Navbar from "./components/Navbar";
-import Skills from "./components/Skills";
-import Work from "./components/Work";
-import Contact from "./components/Contact";
+import About from './sections/About';
+import Home from './sections/Home';
+import Navbar from './layouts/Navbar';
+import Skills from './sections/Skills';
+import Work from './sections/Work';
+import Contact from './sections/Contact';
 
 function App() {
   return (
-    <div> 
+    <div>
       <Navbar />
       <Home />
       <About />

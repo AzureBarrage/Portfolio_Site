@@ -1,3 +1,5 @@
+/// <reference types="vite/client" />
+
 declare module '*.png' {
   const value: string;
   export default value;
@@ -19,6 +21,11 @@ declare module '*.svg' {
 }
 
 declare module '*.gif' {
+  const value: string;
+  export default value;
+}
+
+declare module '*.pdf' {
   const value: string;
   export default value;
 }

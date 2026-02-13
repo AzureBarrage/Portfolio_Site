@@ -4,11 +4,61 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply font-[Raleway];
+  :root {
+    color-scheme: light;
   }
-  li {
-    @apply px-4;
-    @apply cursor-pointer;
+
+  :root.dark {
+    color-scheme: dark;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  html,
+  body,
+  #root {
+    @apply min-h-full;
+  }
+
+  body {
+    @apply font-[Raleway] bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100;
+  }
+
+  body.menu-open {
+    @apply overflow-hidden;
+  }
+
+  *:focus-visible {
+    @apply outline-none ring-2 ring-pink-500 ring-offset-2 ring-offset-slate-50 dark:ring-offset-slate-950;
+  }
+
+  ::selection {
+    @apply bg-pink-500/40 text-slate-100;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .surface {
+    @apply rounded-2xl border border-slate-200 bg-white/80 shadow-soft backdrop-blur dark:border-slate-800 dark:bg-slate-900/70;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold sm:text-4xl;
   }
 }

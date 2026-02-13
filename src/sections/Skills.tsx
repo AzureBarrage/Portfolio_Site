@@ -1,25 +1,33 @@
 import { skillsData } from '../data/skills';
+import Card from '../components/Card';
+import Section from '../components/Section';
+import Tag from '../components/Tag';
 
 const Skills = () => {
   return (
-    <div id='skills' className='w-full h-screen bg-[#0a192f] text-gray-300'>
-      {/* Container */}
-      <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
-        <div>
-          <p className='text-4xl font-bold inline border-b-4 border-pink-600 '>Skills</p>
-          <p className='py-4'>Programming Languages I've worked with</p>
-        </div>
-
-        <div className='w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center py-8'>
-          {skillsData.map((skill) => (
-            <div key={skill.id} className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-              <img className='w-20 mx-auto' src={skill.image} alt={`${skill.name} icon`} />
-              <p className='my-4'>{skill.name}</p>
-            </div>
-          ))}
-        </div>
+    <Section
+      id='skills'
+      label='Skills'
+      title='Technical toolkit'
+      subtitle="Programming languages and frameworks I've worked with in production and project environments."
+    >
+      <div className='grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4'>
+        {skillsData.map((skill) => (
+          <Card key={skill.id} interactive className='flex flex-col items-center text-center'>
+            <img
+              className='h-16 w-16 object-contain'
+              src={skill.image}
+              alt={`${skill.name} logo`}
+              loading='lazy'
+              width={64}
+              height={64}
+            />
+            <p className='mt-4 font-semibold text-slate-900 dark:text-slate-100'>{skill.name}</p>
+            <Tag className='mt-2'>{skill.proficiency}</Tag>
+          </Card>
+        ))}
       </div>
-    </div>
+    </Section>
   );
 };
 

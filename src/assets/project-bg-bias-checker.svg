@@ -1,0 +1,45 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Analytical visualization background for bias checker project">
+  <defs>
+    <linearGradient id="bias-bg" x1="80" y1="40" x2="1540" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1F2937" />
+      <stop offset="1" stop-color="#7C2D12" />
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#FEF3C7" stop-opacity="0.28" />
+      <stop offset="1" stop-color="#FEF3C7" stop-opacity="0.08" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bias-bg)" />
+
+  <rect x="180" y="170" width="1240" height="560" rx="26" fill="#111827" fill-opacity="0.45" stroke="#FDE68A" stroke-opacity="0.35" />
+
+  <g>
+    <rect x="230" y="230" width="520" height="190" rx="18" fill="url(#panel)" />
+    <rect x="230" y="450" width="520" height="220" rx="18" fill="url(#panel)" />
+    <rect x="790" y="230" width="580" height="440" rx="18" fill="url(#panel)" />
+  </g>
+
+  <g stroke="#FCD34D" stroke-width="4" stroke-linecap="round" stroke-opacity="0.9">
+    <path d="M280 290H700" />
+    <path d="M280 330H640" />
+    <path d="M280 370H580" />
+    <path d="M280 515H700" />
+    <path d="M280 555H660" />
+    <path d="M280 595H620" />
+  </g>
+
+  <g>
+    <circle cx="940" cy="350" r="84" fill="#F97316" fill-opacity="0.35" />
+    <circle cx="1080" cy="420" r="84" fill="#22C55E" fill-opacity="0.35" />
+    <circle cx="990" cy="510" r="84" fill="#3B82F6" fill-opacity="0.35" />
+    <circle cx="1140" cy="535" r="84" fill="#EF4444" fill-opacity="0.35" />
+  </g>
+
+  <text x="120" y="118" fill="#FFF7ED" opacity="0.96" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="700">
+    Bias Checker
+  </text>
+  <text x="120" y="163" fill="#FDE68A" opacity="0.9" font-family="Inter, Arial, sans-serif" font-size="24">
+    Text analysis • bias signals • explainable scoring
+  </text>
+</svg>

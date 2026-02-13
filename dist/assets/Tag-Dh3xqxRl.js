@@ -1,0 +1,1 @@
+import{j as r,c as s}from"./index-BQ03mR58.js";const n=({children:e,className:t})=>r.jsx("span",{className:s("inline-flex items-center rounded-full border border-slate-300 px-3 py-1 text-xs font-medium text-slate-700 dark:border-slate-700 dark:text-slate-200",t),children:e});export{n as T};

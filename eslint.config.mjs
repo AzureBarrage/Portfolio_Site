@@ -23,7 +23,7 @@ export default tseslint.config(
     rules: {
       ...reactHooks.configs.recommended.rules,
       "react/react-in-jsx-scope": "off",
-      "prettier/prettier": "error",
+      "prettier/prettier": ["error", { endOfLine: "auto" }],
     },
     settings: {
         react: {

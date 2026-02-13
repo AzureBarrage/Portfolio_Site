@@ -1,0 +1,56 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstract neural network visualization for Cognitive Sim project">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1020" />
+      <stop offset="1" stop-color="#1E1B4B" />
+    </linearGradient>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(520 360) rotate(90) scale(220 260)">
+      <stop stop-color="#22D3EE" stop-opacity="0.7" />
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1060 510) rotate(90) scale(280 340)">
+      <stop stop-color="#A78BFA" stop-opacity="0.55" />
+      <stop offset="1" stop-color="#A78BFA" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)" />
+  <rect width="1600" height="900" fill="url(#glowA)" />
+  <rect width="1600" height="900" fill="url(#glowB)" />
+
+  <g opacity="0.85" stroke="#93C5FD" stroke-opacity="0.45">
+    <path d="M250 560L420 420L620 500L780 350L960 430L1150 290L1320 410" stroke-width="3" />
+    <path d="M290 300L470 370L620 260L820 320L1000 240L1170 330L1360 250" stroke-width="2" />
+    <path d="M230 700L410 620L590 700L790 610L980 690L1160 580L1360 650" stroke-width="2" />
+  </g>
+
+  <g fill="#E2E8F0">
+    <circle cx="250" cy="560" r="10" />
+    <circle cx="420" cy="420" r="12" />
+    <circle cx="620" cy="500" r="11" />
+    <circle cx="780" cy="350" r="12" />
+    <circle cx="960" cy="430" r="11" />
+    <circle cx="1150" cy="290" r="10" />
+    <circle cx="1320" cy="410" r="11" />
+    <circle cx="290" cy="300" r="8" />
+    <circle cx="470" cy="370" r="9" />
+    <circle cx="620" cy="260" r="8" />
+    <circle cx="820" cy="320" r="9" />
+    <circle cx="1000" cy="240" r="8" />
+    <circle cx="1170" cy="330" r="9" />
+    <circle cx="1360" cy="250" r="8" />
+    <circle cx="230" cy="700" r="8" />
+    <circle cx="410" cy="620" r="9" />
+    <circle cx="590" cy="700" r="8" />
+    <circle cx="790" cy="610" r="9" />
+    <circle cx="980" cy="690" r="8" />
+    <circle cx="1160" cy="580" r="9" />
+    <circle cx="1360" cy="650" r="8" />
+  </g>
+
+  <text x="110" y="120" fill="#E2E8F0" opacity="0.9" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="700">
+    Cognitive_Sim
+  </text>
+  <text x="110" y="165" fill="#93C5FD" opacity="0.8" font-family="Inter, Arial, sans-serif" font-size="24">
+    Behavioral simulation • agent state modeling • decision traces
+  </text>
+</svg>

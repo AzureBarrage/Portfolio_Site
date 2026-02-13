@@ -1,67 +1,104 @@
-import { HiArrowNarrowRight } from 'react-icons/hi';
-import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
+import { HiArrowNarrowRight } from 'react-icons/hi';
+import Button from '../components/Button';
+import Container from '../components/Container';
+import { siteConfig } from '../content/site';
+import type { SectionId } from '../types/content';
+import { trackEvent } from '../utils/analytics';
 
-const Home = () => {
+interface HomeProps {
+  onNavigate: (sectionId: SectionId) => void;
+  reduceMotion: boolean;
+}
+
+const Home = ({ onNavigate, reduceMotion }: HomeProps) => {
+  const transition = reduceMotion
+    ? { duration: 0 }
+    : {
+        duration: 0.45,
+      };
+
   return (
-    <div id='home' className='w-full h-screen bg-[#0a192f]'>
-      {/* Container */}
-      <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full'>
+    <section
+      id='home'
+      aria-label='Home'
+      className='relative flex min-h-[calc(100vh-5rem)] items-center overflow-hidden py-20'
+    >
+      <div className='pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-pink-100/60 via-slate-100 to-slate-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950' />
+      <Container className='flex flex-col justify-center'>
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={reduceMotion ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className='text-pink-600 text-2xl'
+          transition={transition}
+          className='text-base font-semibold uppercase tracking-[0.2em] text-pink-500 sm:text-lg'
         >
           Hello, my name is
         </motion.p>
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+          initial={reduceMotion ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className='text-4xl sm:text-7xl font-bold text-[#ccd6f6]'
+          transition={{ ...transition, delay: reduceMotion ? 0 : 0.08 }}
+          className='mt-3 text-4xl font-bold text-slate-900 sm:text-6xl lg:text-7xl dark:text-slate-100'
         >
-          Julian MacLeod
+          {siteConfig.person.name}
         </motion.h1>
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+          initial={reduceMotion ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className='text-4xl sm:text-7xl font-bold text-[#8892b0]'
+          transition={{ ...transition, delay: reduceMotion ? 0 : 0.16 }}
+          className='mt-2 text-3xl font-bold text-slate-600 sm:text-5xl dark:text-slate-300'
         >
-          I'm a Software Developer
+          {siteConfig.person.role}
         </motion.h2>
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={reduceMotion ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className='text-[#8892b0] py-4 max-w-[700px]'
+          transition={{ ...transition, delay: reduceMotion ? 0 : 0.24 }}
+          className='mt-6 max-w-2xl text-base leading-relaxed text-slate-700 sm:text-lg dark:text-slate-300'
         >
-          My goal is creating and designing the ideal user experience. I have worked on a variety of
-          both back-end and front-end projects ranging from REST APIs to responsive web
-          applications. Please feel free to browse my previous projects or contact me for any
-          reason.
+          {siteConfig.person.shortBio}
         </motion.p>
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={reduceMotion ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={{ ...transition, delay: reduceMotion ? 0 : 0.3 }}
+          className='mt-8 flex flex-wrap items-center gap-3'
         >
-          <Link to='work' spy={true} smooth={true} duration={500} className='cursor-pointer'>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className='text-white group border-2.5 items-center hover:bg-pink-600 hover:border-pink-600 w-fit flex px-6 py-3 my-2 border-2'
-            >
-              View Work
-              <span className='group-hover:rotate-90 duration-300'>
-                <HiArrowNarrowRight className='ml-3' />
-              </span>
-            </motion.div>
-          </Link>
+          <Button
+            type='button'
+            onClick={() => {
+              trackEvent('hero_primary_cta', { section: 'home' });
+              onNavigate('work');
+            }}
+            className='group'
+          >
+            {siteConfig.cta.primary}
+            <span className='transition-transform duration-300 group-hover:translate-x-1'>
+              <HiArrowNarrowRight className='ml-2' aria-hidden='true' />
+            </span>
+          </Button>
+          <Button
+            type='button'
+            variant='secondary'
+            onClick={() => {
+              trackEvent('hero_secondary_cta', { section: 'home' });
+              onNavigate('contact');
+            }}
+          >
+            {siteConfig.cta.secondary}
+          </Button>
+          <a
+            href={siteConfig.cta.scheduleUrl}
+            target='_blank'
+            rel='noreferrer'
+            className='inline-flex items-center rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-200 dark:text-slate-200 dark:hover:bg-slate-800'
+            onClick={() => trackEvent('hero_schedule_click')}
+          >
+            Schedule a chat
+          </a>
         </motion.div>
-      </div>
-    </div>
+      </Container>
+    </section>
   );
 };
 
